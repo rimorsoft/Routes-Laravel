@@ -17,24 +17,21 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::middleware('auth')
-    ->prefix('panel')
-    ->name('panel.')
-    ->namespace('Rimorsoft')
-    ->domain('blog.rimorsoft.com')
-    ->group(function () {
+// post = id = 1
+Route::get('posts/{post}', function (App\Post $post) {
+    // $post = App\Post::find($id);
 
-    /**
-     * Route::get('posts', 'PostController@index')->name('posts');
-     * Route::get('posts/{id}', 'PostController@show')->name('posts.show');
-     */
+    return $post->slug;
+});
 
-    Route::get('posts', function () {
-        return 'todos los posts';
-    })->name('posts');
+// post = slug
+Route::get('posts/{post:slug}', function (App\Post $post) {
+    return $post->id;
+});
 
-    Route::get('posts/{id}', function ($id) {
-        return "post del id $id";
-    })->name('posts.show');
+//ERROR 404
+Route::fallback(function () {
+    // return 'método fallback';
 
+    return view('errors.404');
 });
