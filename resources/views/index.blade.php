@@ -9,9 +9,6 @@
     <body>
         <h1>Bienvenidos</h1>
 
-        <a href="{{ route('posts', [
-            'category' => 'php', 
-            'status' => 'draft'
-            ]) }}">Mis Posts</a>
+        <a href="{{ route('post', 4000) }}">Mi Post</a>
     </body>
 </html>

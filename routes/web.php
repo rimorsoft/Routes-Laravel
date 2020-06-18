@@ -16,11 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'index')->name('home');
 
 /*
-Route::get('parameters/{category}/{post}', function ($category, $post) {
-    return "parámetros $category $post";
-})->name('parameters');
+Route::get('post/{slug}', function ($slug) {
+    return $slug;
+})
+->where('slug', '[A-Za-z-]+') //[0-9]+
+->name('post');
 */
 
-Route::get('posts/{category?}', function ($category = null) {
-    return "parámetros $category";
-})->name('posts');
+Route::get('post/{id}', function ($id) {
+    return $id;
+})->name('post');
