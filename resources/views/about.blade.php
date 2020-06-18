@@ -7,7 +7,7 @@
         <title>Acerca de...</title>
     </head>
     <body>
-        <h1>Rimorsoft Online</h1>
+        <h1>{{ $company }}</h1>
 
         <a href="{{ route('home') }}">Home</a>
     </body>
