@@ -9,6 +9,6 @@
     <body>
         <h1>Bienvenidos</h1>
 
-        <a href="{{ route('post', 4000) }}">Mi Post</a>
+        <a href="{{ route('panel.posts') }}">Todos los Posts</a>
     </body>
 </html>
