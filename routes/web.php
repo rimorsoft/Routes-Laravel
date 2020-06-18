@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/** FORMULARIO (GET - POST)
+ * get
+ * post
+ * put
+ * patch
+ * delete
+ * options
+ */
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
