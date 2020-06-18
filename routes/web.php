@@ -13,15 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/** FORMULARIO (GET - POST)
- * get
- * post
- * put
- * patch
- * delete
- * options
- */
+Route::view('/', 'index')->name('home');
 
-Route::get('/', function () {
-    return view('index');
+/**
+ * 302: movido temporalmente
+ * 301: movido permanente
+ */
+//Route::redirect('tdd', 'tdd-en-laravel', 301);
+Route::permanentRedirect('tdd', 'tdd-en-laravel');
+
+Route::get('tdd-en-laravel', function () {
+    return 'eBook TDD en Laravel';
 });
