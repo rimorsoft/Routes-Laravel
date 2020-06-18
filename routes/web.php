@@ -15,13 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index')->name('home');
 
-/**
- * 302: movido temporalmente
- * 301: movido permanente
- */
-//Route::redirect('tdd', 'tdd-en-laravel', 301);
-Route::permanentRedirect('tdd', 'tdd-en-laravel');
+/*
+Route::get('parameters/{category}/{post}', function ($category, $post) {
+    return "parámetros $category $post";
+})->name('parameters');
+*/
 
-Route::get('tdd-en-laravel', function () {
-    return 'eBook TDD en Laravel';
-});
+Route::get('posts/{category?}', function ($category = null) {
+    return "parámetros $category";
+})->name('posts');

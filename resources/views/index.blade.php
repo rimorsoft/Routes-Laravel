@@ -9,6 +9,9 @@
     <body>
         <h1>Bienvenidos</h1>
 
-        <a href="{{ route('about') }}">Sobre Rimorsoft</a>
+        <a href="{{ route('posts', [
+            'category' => 'php', 
+            'status' => 'draft'
+            ]) }}">Mis Posts</a>
     </body>
 </html>
